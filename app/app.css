@@ -245,3 +245,11 @@
     position: relative;
     background: red;
 }
+
+#overrideMaster .package-item-price {
+    font-size:14px;
+}
+
+#overrideMaster .desktop-navigation>.top-bar-block {
+    font-size:12px !important;
+}
