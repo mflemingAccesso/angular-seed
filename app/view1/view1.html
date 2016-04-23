@@ -1,1 +1,22 @@
-<p>This is the partial for view 1.</p>
+<div class="row">
+    <h1>Shopland Configurator</h1>
+</div>
+
+<div class="col-xs-12 col-sm-5">
+    <div class="row">
+        <div class="col-xs-12 margin-bottom5 no-padding-left" data-ng-repeat="field in fields">
+            <div class="input-group">
+                <input type="text" class="form-control" colorpicker="rgb" colorpicker-with-input="true" ng-model="field.modelValue" placeholder="{{field.placeholder}}" />
+                <span class="input-group-addon" data-ng-bind="field.additional"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-success-outline btn-lg" data-ng-click="generateLESS(fields)">
+            Generate LESS File
+        </button>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-7">
+    <div data-ng-include="'view1/partials/staticstore.html'" style="overflow:hidden;"></div>
+</div>

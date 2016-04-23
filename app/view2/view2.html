@@ -1,5 +1,97 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div class="row">
+    <h1>Passbook Configurator</h1>
+</div>
+<div class="row margin-bottom20">
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary" data-ng-click="setActiveSubPage('colors')" data-ng-class="{'active': activeSubPage == 'colors'}">Colors</button>
+        <button type="button" class="btn btn-primary" data-ng-click="setActiveSubPage('sql')" data-ng-disabled="!showGeneratedXML" data-ng-class="{'active': activeSubPage == 'sql'}">SQL</button>
+    </div>
+</div>
+<div data-ng-show="activeSubPage == 'sql'">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 margin-bottom5" data-ng-class-odd="'no-padding-left'" data-ng-class-even="'no-padding-right'" data-ng-repeat="field in fields">
+            <div class="input-group">
+                <input type="text" required class="form-control" data-ng-model="field.modelValue" placeholder="{{field.placeholder}}">
+                <span class="input-group-addon" data-ng-bind="field.additional"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-success-outline btn-lg" data-ng-click="generateSQL(fields)">
+            Generate SQL
+        </button>
+    </div>
+    <div class="row" data-ng-show="showGeneratedSQL">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">Generated SQL</h4>
+                <p class="card-text" data-ng-bind="generatedSQL"></p>
+                <button type="button" disabled class="btn btn-primary" data-ng-click="copyToClipboard()">Copy to clipboard</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-ng-show="activeSubPage == 'colors'">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 no-padding-left">
+            <div class="input-group margin-bottom5" data-ng-repeat="field in colorFields">
+                <input data-ng-hide="field.showRegularInput" type="text" class="form-control" colorpicker="rgb" colorpicker-with-input="true" ng-model="field.modelValue" placeholder="{{field.placeholder}}" />
+                <input data-ng-show="field.showRegularInput" type="text" class="form-control" ng-model="field.modelValue" placeholder="{{field.placeholder}}" />
+                <span class="input-group-addon" data-ng-bind="field.additional"></span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 margin-bottom5">
+            <div class="live-pass-preview-container">
+                <div class="background" id="background-color" data-ng-style="{'background-color': backgroundColor}">
+                    <div class="circle"></div>
+                    <div class="logo">
+                        <canvas id="canvas-logo" name="canvasData"></canvas>
+                    </div>
+                    <div class="order-number">
+                        <div class="o-label labelColor" data-ng-style="{'color': labelColor}">Order Number</div>
+                        <div class="o-number foreground" data-ng-style="{'color': foregroundColor}">600019986</div>
+                    </div>
+                    <div class="strip">
+                        <div class="strip-rate labelColor" data-ng-style="{'color': labelColor}">Adult</div>
+                        <div class="strip-type foreground" data-ng-style="{'color': foregroundColor}">Daily Ticket Date Time</div>
+                    </div>
+                    <div class="additional-characs">
+                        <div class="ac-left">
+                            <div class="ac-left-title labelColor" data-ng-style="{'color': labelColor}">Date</div>
+                            <div class="ac-left-date foreground" data-ng-style="{'color': foregroundColor}">07/27/2015</div>
+                        </div>
+                        <div class="ac-right">
+                            <div class="ac-right-title labelColor" data-ng-style="{'color': labelColor}">Time</div>
+                            <div class="ac-right-date foreground" data-ng-style="{'color': foregroundColor}">7:30 AM</div>
+                        </div>
+                    </div>
+                    <div class="additional-information">
+                        <div class="ai-left-title labelColor" data-ng-style="{'color': labelColor}">Customer Name</div>
+                        <div class="ai-left-name foreground" data-ng-style="{'color': foregroundColor}">Test Accesso</div>
+                    </div>
+                    <div class="barcode-container">
+                        <div class="barcode">
+                            <img src="images/barcode.jpg" />
+                            <div class="barcode-number">68486082860446165</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-success-outline btn-lg" data-ng-click="generateXML(colorFields)">
+            Generate Pass XML
+        </button>
+    </div>
+    <div class="row" data-ng-show="showGeneratedXML">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">Generated Pass XML</h4>
+                <p class="card-text" data-ng-bind="generatedXML"></p>
+                <button type="button" disabled class="btn btn-primary" data-ng-click="copyToClipboard()">Copy to clipboard</button>
+            </div>
+        </div>
+    </div>
+
+</div>

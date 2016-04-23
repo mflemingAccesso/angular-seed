@@ -1,0 +1,111 @@
+<body class="desktop accesso-chrome accesso-webkit" data-ng-class="{'modal-enabled':modal.show}">
+
+	<div id="overrideMaster" class="ng-scope">
+		<div class="inner-body ng-scope" id="inner-body" style="width: 1080px;">
+
+			<!-- ngInclude:  -->
+			<div id="fix-navigation" class="fix-navigation ng-scope" style="position:relative;">
+				<div class="inner-body ng-scope">
+					<div class="menu-btn nav-block">
+						<span title="Menu" class="icon-menuIcon"></span>
+					</div>
+					<div class="nav-block top-bar-branding">
+						<div class="branding">
+							<div title="Six Flags Magic Mountain" id="parkLogo" class="branding-image ng-invalid" data-alt="Six Flags Magic Mountain" style="display: none;"></div>
+							<span class="branding-title ng-binding">Six Flags Magic Mountain</span>
+						</div>
+					</div>
+
+					<div id="desktop-navigation" class="desktop-navigation nav-block device-desktop desktop-navigation-complete">
+						<!-- ngRepeat: deskMenu in desktopMenuItems -->
+						<div class="top-bar-block ng-scope active">
+							<span class="ng-binding">Season Passes</span>
+							<!-- ngRepeat: submenu in deskMenu.MENUITEM -->
+						</ul>
+					</div><!-- end ngRepeat: deskMenu in desktopMenuItems -->
+					<div class="top-bar-block ng-scope">
+						<span class="ng-binding">Memberships</span>
+						<!-- ngRepeat: submenu in deskMenu.MENUITEM -->
+					</ul>
+				</div><!-- end ngRepeat: deskMenu in desktopMenuItems -->
+				<promo class="top-bar-block top-bar-promo desktop-promo-button" id="topBarPromo">
+					<span class="ng-binding">Promotional Code</span>
+				</promo>
+			</div>
+			<div class="nav-block pull-right knl-cart">
+				<span title="Cart" class="cart-btn nav-block pull-right">
+					<span class="icon-cart"></span>
+				</span>
+				<span title="FAQs" class="nav-block pull-right help-btn">
+					<span class="icon-help"></span>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div id="application-backdrop"></div>
+
+	<div id="applicationWrap">
+		<div id="application-view">
+			<!-- uiView:  -->
+			<div class="app-content ng-scope">
+				<div class="desktop-container smaller-container ng-scope">
+					<!--START PACKAGES LOOP -->
+					<div class="row"></div>
+					<div class="package-list-row ng-scope first-child">
+						<div class="col-xs-12 col-ax-6 col-sm-4 col-md-4 col-lg-4 cursor package-list-item override ng-scope">
+							<div class="panel panel-default">
+								<div class="panel-heading override not-table">
+									<span class="truncate package-heading truncate ng-binding">Test Package 1</span>
+									<span class="truncate package-subheading truncate ng-binding" >Example package data</span>
+								</div>
+
+								<div class="package-image-container override">
+									<div class="image-container override ng-invalid" data-alt="DNERI Season Pass (A)" data-verify-image-src="https://assets.ceiris.com/sixflags/images/TPSP1.jpg">
+										<img class="image-placeholder" alt="DNERI Season Pass (A)" data-ng-src="/images/image-placeholder.png" src="/images/image-placeholder.png">
+										<span class="package-item-price">
+											<div class="price-tag">
+												<span class="ng-binding one-rate">$72.99</span>
+											</div>
+											<div class="buy-btn pull-right ng-binding">Buy Now</div>
+										</span>
+									</div>
+								</div>
+
+							</div>
+						</div><!-- end ngRepeat: package in row | filterByDeviceType -->
+						<div class="col-xs-12 col-ax-6 col-sm-4 col-md-4 col-lg-4 cursor package-list-item override ng-scope">
+							<div class="panel panel-default" >
+								<div class="panel-heading override not-table">
+									<span class="truncate package-heading truncate ng-binding">Test Package 2</span>
+									<span class="truncate package-subheading truncate ng-binding">Example package data</span>
+								</div>
+
+								<div class="package-image-container override">
+									<div class="image-container override ng-invalid" data-alt="DNERI Season Pass (B)">
+										<img class="image-placeholder" alt="DNERI Season Pass (B)"  src="/images/image-placeholder.png">
+										<span class="package-item-price">
+											<div class="price-tag">
+												<span class="ng-binding one-rate">$72.99</span>
+											</div>
+											<div class="buy-btn pull-right ng-binding">Buy Now</div>
+										</span>
+									</div>
+									<!--</div>-->
+								</div>
+							</div>
+						</div><!-- end ngRepeat: package in row | filterByDeviceType -->
+					</div><!-- end ngRepeat: row in dataModel.packageList -->
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+
+
+
+
+</body>
+</html>

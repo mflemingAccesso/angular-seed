@@ -1,30 +1,247 @@
 /* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.body-container {
+    margin-top:20px;
 }
 
-.menu:before {
-  content: "[";
+.row {
+    margin-bottom: 10px;
 }
 
-.menu:after {
-  content: "]";
+.input-group .input-group-addon {
+    min-width: 200px;
 }
 
-.menu > li {
-  display: inline;
+/* Remove Padding/Margin
+================*/
+.no-padding-top {
+  padding-top: 0 !important;
+}
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+.no-padding-right {
+  padding-right: 0px;
+}
+.no-padding-left {
+  padding-left: 0px;
+}
+.no-margin-top {
+  margin-top: 0 !important;
+}
+.no-margin {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+/* Base Padding
+================*/
+.padding-top {
+  padding-top: 10px;
+}
+.padding-top5 {
+  padding-top: 5px;
+}
+.padding-top10 {
+  padding-top: 10px;
+}
+.padding-bottom5 {
+  padding-bottom: 5px;
+}
+.padding-bottom10 {
+  padding-bottom: 10px;
+}
+.padding-right5 {
+  padding-right: 5px;
+}
+.padding-right10 {
+  padding-right: 10px;
+}
+.padding-right25 {
+  padding-right: 25px;
+}
+.padding-left5 {
+  padding-left: 5px;
+}
+.padding-left10 {
+  padding-left: 10px;
+}
+/* Base Margin
+================*/
+.margin-top5 {
+  margin-top: 5px;
+}
+.margin-top10 {
+  margin-top: 10px;
+}
+.margin-bottom5 {
+  margin-bottom: 5px;
+}
+.margin-bottom10 {
+  margin-bottom: 10px;
+}
+.margin-bottom20 {
+  margin-bottom: 20px;
+}
+.margin-right5 {
+  margin-right: 5px;
+}
+.margin-right10 {
+  margin-right: 10px;
+}
+.margin-left5 {
+  margin-left: 5px;
+}
+.margin-left10 {
+  margin-left: 10px;
+}
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+.text-center {
+  text-align: center;
+}
+.cursor {
+  cursor: pointer;
+}
+.form-group {
+  margin-bottom: 10px !important;
+}
+.farbtastic {
+  margin: 0 auto;
+}
+.container.main {
+  margin-top: 25px;
+  padding-top: 10px;
+}
+.live-pass-preview-container .background {
+  height: 460px;
+  width: 350px;
+  background-color: black;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.live-pass-preview-container .background .circle {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -35px;
+  left: 155px;
+  background: white;
+  border-radius: 50%;
+}
+.live-pass-preview-container .background .logo {
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.live-pass-preview-container .background .order-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  text-align: right;
+}
+.live-pass-preview-container .background .order-number .o-label {
+  font-size: 13px;
+  color: white;
+}
+.live-pass-preview-container .background .order-number .o-number {
+  font-size: 22px;
+  color: gray;
+}
+.live-pass-preview-container .background .strip {
+  width: 100%;
+  padding: 15px 15px 26px;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  text-align: left;
+}
+.live-pass-preview-container .background .strip .strip-rate {
+  font-size: 13px;
+  color: white;
+}
+.live-pass-preview-container .background .strip .strip-type {
+  font-size: 19px;
+  color: gray;
+}
+.live-pass-preview-container .background .additional-characs {
+  position: absolute;
+  top: 150px;
+  padding: 15px;
+  left: 0;
+  width: 100%;
+}
+.live-pass-preview-container .background .additional-characs .ac-left {
+  text-align: left;
+  width: 50%;
+  float: left;
+}
+.live-pass-preview-container .background .additional-characs .ac-left .ac-left-title {
+  font-size: 13px;
+  color: white;
+}
+.live-pass-preview-container .background .additional-characs .ac-left .ac-left-date {
+  font-size: 15px;
+  color: gray;
+}
+.live-pass-preview-container .background .additional-characs .ac-right {
+  text-align: right;
+  width: 50%;
+  float: left;
+}
+.live-pass-preview-container .background .additional-characs .ac-right .ac-right-title {
+  font-size: 13px;
+  color: white;
+}
+.live-pass-preview-container .background .additional-characs .ac-right .ac-right-date {
+  font-size: 15px;
+  color: gray;
+}
+.live-pass-preview-container .background .additional-information {
+  position: absolute;
+  width: 100%;
+  padding: 15px;
+  top: 219px;
+  left: 0;
+}
+.live-pass-preview-container .background .additional-information .ai-left-title {
+  font-size: 13px;
+  color: white;
+}
+.live-pass-preview-container .background .additional-information .ai-left-name {
+  font-size: 15px;
+  color: gray;
+}
+.live-pass-preview-container .background .barcode-container {
+  position: absolute;
+  top: 370px;
+  width: 100%;
+  text-align: center;
+}
+.live-pass-preview-container .background .barcode-container .barcode {
+  width: 65%;
+  font-size: 13px;
+  color: #4d4d4d;
+  margin: 0 auto;
+  height: 65px;
+  border-radius: 5px;
+  background: white;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+
+
+/* Store Container */
+.store-container {
+    height: 635px;
+    width: 1024px;
+    position: relative;
+    background: red;
 }
