@@ -4,7 +4,7 @@
 		<div class="inner-body ng-scope" id="inner-body" style="width: 1080px;">
 
 			<!-- ngInclude:  -->
-			<div id="fix-navigation" class="fix-navigation ng-scope" style="position:relative;">
+			<div id="fix-navigation" class="fix-navigation ng-scope" style="position:relative;" data-ng-style="{'background-color': navBG}">
 				<div class="inner-body ng-scope">
 					<div class="menu-btn nav-block">
 						<span title="Menu" class="icon-menuIcon"></span>
@@ -12,17 +12,17 @@
 
 					<div id="desktop-navigation" class="desktop-navigation nav-block device-desktop desktop-navigation-complete">
 						<!-- ngRepeat: deskMenu in desktopMenuItems -->
-						<div class="top-bar-block ng-scope active">
+						<div class="top-bar-block ng-scope active"  data-ng-style="{'color': navFG}">
 							<span class="ng-binding">Season Passes</span>
 							<!-- ngRepeat: submenu in deskMenu.MENUITEM -->
 						</ul>
 					</div><!-- end ngRepeat: deskMenu in desktopMenuItems -->
-					<div class="top-bar-block ng-scope">
+					<div class="top-bar-block ng-scope"  data-ng-style="{'color': navFG}">
 						<span class="ng-binding">Memberships</span>
 						<!-- ngRepeat: submenu in deskMenu.MENUITEM -->
 					</ul>
 				</div><!-- end ngRepeat: deskMenu in desktopMenuItems -->
-				<promo class="top-bar-block top-bar-promo desktop-promo-button" id="topBarPromo">
+				<promo class="top-bar-block top-bar-promo desktop-promo-button" id="topBarPromo"  data-ng-style="{'color': navFG}">
 					<span class="ng-binding">Promotional Code</span>
 				</promo>
 			</div>
@@ -49,7 +49,7 @@
 						<div class="col-xs-12 col-ax-6 col-sm-4 col-md-4 col-lg-4 cursor package-list-item override ng-scope">
 							<div class="panel panel-default">
 								<div class="panel-heading override not-table">
-									<span class="truncate package-heading truncate ng-binding">Test Package 1</span>
+									<span class="truncate package-heading truncate ng-binding" data-ng-style="{'color': tagline}">Test Package 1</span>
 									<span class="truncate package-subheading truncate ng-binding" >Example package data</span>
 								</div>
 
@@ -69,7 +69,7 @@
 						<div class="col-xs-12 col-ax-6 col-sm-4 col-md-4 col-lg-4 cursor package-list-item override ng-scope">
 							<div class="panel panel-default" >
 								<div class="panel-heading override not-table">
-									<span class="truncate package-heading truncate ng-binding">Test Package 2</span>
+									<span class="truncate package-heading truncate ng-binding"data-ng-style="{'color': tagline}">Test Package 2</span>
 									<span class="truncate package-subheading truncate ng-binding">Example package data</span>
 								</div>
 

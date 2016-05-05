@@ -55,5 +55,21 @@ angular.module('myApp.view1', ['ngRoute'])
         }
     ]
 
+    $scope.$watch('fields',function(old){
+        old.forEach(function(item){
+            if (item.name == 'nav-bg') {
+                $scope.navBG = item.modelValue;
+            } else if (item.name == 'nav-fg') {
+                $scope.navFG = item.modelValue;
+            } else if (item.name == 'tagline') {
+                $scope.tagline = item.modelValue;
+            } else if (item.name == 'buy-bg') {
+                $scope.buyBG = item.modelValue;
+            } else if (item.name == 'buy-fg') {
+                $scope.buyFG = item.modelValue;
+            }
+        })
+    }, true);
+
 
 }]);
