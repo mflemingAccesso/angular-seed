@@ -67,6 +67,12 @@ angular.module('myApp.view1', ['ngRoute'])
                 $scope.buyBG = item.modelValue;
             } else if (item.name == 'buy-fg') {
                 $scope.buyFG = item.modelValue;
+            } else if (item.name == 'price-fg') {
+                $scope.priceFG = item.modelValue;
+            } else if (item.name == 'price-bg') {
+                $scope.priceBG = item.modelValue;
+            } else if (item.name == 'shadow') {
+                $scope.shadow = item.modelValue;
             }
         })
     }, true);
