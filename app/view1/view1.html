@@ -16,6 +16,15 @@
             Generate LESS File
         </button>
     </div>
+    <div class="row" data-ng-show="showGeneratedLESS">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">Generated LESS</h4>
+                <p class="card-text" data-ng-bind="generatedLESS"></p>
+                <button type="button" disabled class="btn btn-primary" data-ng-click="copyToClipboard()">Copy to clipboard</button>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="col-xs-12 col-sm-7">
     <div data-ng-include="'view1/partials/staticstore.html'" style="overflow:hidden;"></div>
